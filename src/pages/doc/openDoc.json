@@ -14,11 +14,11 @@
   },
   "externalDocs": {
     "description": "À propos du dev",
-    "url": "https://www.goulin.io"
+    "url": "https://www.goulin.fr"
   },
   "servers": [
     {
-      "url": "https://rooms-finder.goulin.fr/"
+      "url": "https://rooms-finder.api.goulin.fr/"
     }
   ],
   "paths": {
