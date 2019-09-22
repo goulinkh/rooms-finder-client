@@ -53,6 +53,7 @@ export const Form = ({ onSubmit }) => {
     setBuilding(null);
     setRoom(null);
     setDate(new Date());
+    setRooms([]);
   };
   return (
     <form
