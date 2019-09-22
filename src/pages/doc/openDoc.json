@@ -2,7 +2,7 @@
   "openapi": "3.0.1",
   "info": {
     "title": "Free Room Finder",
-    "description": "Une API Rest qui a pour but d'aider les étudiants de l'Université Paul Sabatier de trouver des salles vides.",
+    "description": "Une API Rest qui a pour but d'aider les étudiants de l'Université Paul Sabatier à trouver des salles vides.",
     "contact": {
       "email": "contact@goulin.fr"
     },
