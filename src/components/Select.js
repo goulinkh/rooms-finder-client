@@ -2,7 +2,7 @@ import React from "react";
 import S from "react-select";
 
 // eslint-disable-next-line react/prop-types
-export const Select = ({ placeholder, disabled, options, onChange }) => {
+export const Select = ({ placeholder, disabled, options, onChange, value }) => {
   const width = 165;
   const height = 29;
   const theme = theme => ({
@@ -72,6 +72,7 @@ export const Select = ({ placeholder, disabled, options, onChange }) => {
       styles={customStyles}
       theme={theme}
       onChange={onChange}
+      value={value ? { value: value, label: value } : null}
     />
   );
 };

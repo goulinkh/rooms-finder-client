@@ -15,6 +15,7 @@ export const Form = ({ onSubmit }) => {
   const [rooms, setRooms] = useContext(BuildingsContext).rooms;
   // const [time, setTime] = useState("07:45");
   const [date, setDate] = useState(new Date());
+  const [building, setBuilding] = useState(null);
   const [room, setRoom] = useState(null);
 
   useEffect(() => {
@@ -25,19 +26,21 @@ export const Form = ({ onSubmit }) => {
   const handleSubmit = e => {
     if (
       date &&
-      room
+      building
       // && time
     ) {
       onSubmit({
         date,
         // time,
-        room
+        room: room || building
       });
     }
+    reset();
     e.preventDefault();
   };
   const onBuildingChange = e => {
     if (e && e.value) {
+      setBuilding(e.value);
       updateRooms(setRooms, e.value);
     }
   };
@@ -45,6 +48,11 @@ export const Form = ({ onSubmit }) => {
     if (e && e.value) {
       setRoom(e.value);
     }
+  };
+  const reset = () => {
+    setBuilding(null);
+    setRoom(null);
+    setDate(new Date());
   };
   return (
     <form
@@ -80,15 +88,22 @@ export const Form = ({ onSubmit }) => {
         options={buildings.map(b => ({ value: b.name, label: b.name }))}
         placeholder="Bâtiment"
         disabled={!buildings.length}
+        isSearchable={true}
         onChange={onBuildingChange}
+        value={building}
       />
       <Select
         options={rooms.map(r => ({ value: r.name, label: r.name }))}
         placeholder="Salle"
+        isSearchable={true}
         disabled={!(buildings.length && rooms.length)}
         onChange={onRoomChange}
+        value={room}
       />
-      <button type="submit" className="submit">
+      <button
+        type="submit"
+        className={`submit ${building || room ? null : "disable"}`}
+      >
         Chercher
       </button>
     </form>
