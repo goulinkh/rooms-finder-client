@@ -53,7 +53,7 @@ export const Form = ({ onSubmit }) => {
       style={{
         display: "flex",
         alignItems: "center",
-        justifyContent: "space-evenly",
+        justifyContent: "space-between",
         flexWrap: "wrap"
       }}
       className="search-form"
