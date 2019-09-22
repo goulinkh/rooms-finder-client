@@ -1,0 +1,9 @@
+{
+  "short_name": "Salle vides",
+  "name": "Chercheur des salles vides",
+  "icons": [],
+  "start_url": ".",
+  "display": "standalone",
+  "theme_color": "#007a66",
+  "background_color": "#ffffff"
+}

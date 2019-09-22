@@ -1,0 +1,99 @@
+/* Buildings and rooms select */
+.submit {
+  cursor: pointer;
+  font-size: 1rem;
+  padding: 7px;
+  color: #dedede;
+  background: linear-gradient(to bottom right, var(--accent), var(--color2));
+  border: none;
+  border-radius: 15px;
+  box-shadow: 2px 4px 7px rgba(0, 0, 0, 0.5);
+  position: relative;
+  transition: 0.3s all ease-out;
+}
+.submit:hover {
+  padding-bottom: -5px;
+  box-shadow: 2px 4px 4px rgba(0, 0, 0, 0.5);
+}
+.submit:focus {
+  box-shadow: 1px 2px 7px rgba(0, 0, 0, 0.5);
+}
+.search-form > * {
+  margin-top: 20px;
+  box-sizing: border-box;
+}
+select {
+  font-size: 1rem;
+  padding: 2px;
+  border: 0;
+  border-bottom: 1px rgba(0, 0, 0, 0.25) solid;
+  outline-color: transparent;
+  transition: all 0.4s ease-out;
+}
+select:focus {
+  border-bottom: 1px var(--accent) solid;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+}
+select option {
+  font-size: 1rem;
+}
+option:hover {
+  background-color: var(--accent-light);
+  color: white;
+}
+.react-calendar,
+.react-time-picker__clock.react-time-picker__clock--open {
+  border: 1px rgba(0, 0, 0, 0.1) solid;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+}
+.react-date-picker__wrapper,
+.react-time-picker__wrapper {
+  padding: 2px;
+  text-align: center;
+  font-size: 1rem;
+  border: 0;
+  border-bottom: 1px rgba(0, 0, 0, 0.25) solid;
+
+  outline-color: transparent;
+  transition: all 0.4s ease-out;
+}
+
+.react-date-picker--open .react-date-picker__wrapper,
+.react-time-picker--open .react-time-picker__wrapper {
+  border-bottom: 1px var(--accent) solid;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+}
+.react-date-picker__inputGroup__input:invalid {
+  background-color: transparent;
+}
+input {
+  outline-color: transparent;
+}
+input:focus,
+.react-calendar__tile--active,
+.react-calendar__tile--active:enabled:hover,
+.react-calendar__tile--active:enabled:focus {
+  background-color: var(--accent-light);
+  color: white;
+}
+input::selection {
+  background: transparent;
+}
+.react-date-picker__button:enabled:hover .react-date-picker__button__icon,
+.react-date-picker__button:enabled:focus .react-date-picker__button__icon,
+.react-time-picker__button:enabled:hover .react-time-picker__button__icon,
+.react-time-picker__button:enabled:focus .react-time-picker__button__icon {
+  stroke: var(--accent);
+}
+.react-date-picker__button:enabled,
+.react-time-picker__button:enabled {
+  outline-color: var(--accent);
+}
+.react-time-picker__inputGroup__input:focus::placeholder {
+  color: white;
+}
+
+.react-calendar__tile {
+  border-radius: 5px;
+}
