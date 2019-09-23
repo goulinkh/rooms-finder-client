@@ -56,17 +56,7 @@ export const Form = ({ onSubmit }) => {
     setRooms([]);
   };
   return (
-    <form
-      onSubmit={handleSubmit}
-      method="POST"
-      style={{
-        display: "flex",
-        alignItems: "center",
-        justifyContent: "space-between",
-        flexWrap: "wrap"
-      }}
-      className="search-form"
-    >
+    <form onSubmit={handleSubmit} method="POST" className="search-form">
       <DatePicker
         required={true}
         yearPlaceholder="année"

@@ -16,7 +16,7 @@ export const Index = () => {
                 <h2>{r.room}</h2>
                 <ul>
                   {r.freeSchedules.map(s => (
-                    <li key={s.start}>
+                    <li key={s.start} style={{ margin: ".2rem 0" }}>
                       {new Date(s.start).toLocaleTimeString(
                         navigator.language,
                         {
@@ -24,7 +24,7 @@ export const Index = () => {
                           minute: "2-digit"
                         }
                       )}{" "}
-                      jusqu&apos;à{" "}
+                      <span style={{ fontStyle: "italic" }}>jusqu&apos;à </span>
                       {new Date(s.end).toLocaleTimeString(navigator.language, {
                         hour: "2-digit",
                         minute: "2-digit"
