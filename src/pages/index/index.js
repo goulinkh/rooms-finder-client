@@ -43,7 +43,7 @@ const getFreeRooms = async ({ setter, date, room }) => {
   try {
     setter(
       await (await fetch(
-        `${PATHS.freeRooms}?date=${date
+        `${PATHS.freeRooms}?date=${new Date(date.getTime() + 1000 * 2 * 3600)
           .toISOString()
           .replace(/T.+/gi, "")}&place=${room}`
       )).json()
