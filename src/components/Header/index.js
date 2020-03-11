@@ -11,7 +11,7 @@ export const Header = () => {
         className={styles.link + " " + styles.logo}
         activeClassName={styles.activeLink}
       >
-        <span style={{ fontSize: "1.1em" }}>∃</span>S, S=Ø
+        <span style={{ fontSize: "1.1em" }}>∃</span> S, S=Ø
       </NavLink>
       <NavLink
         className={styles.link}
