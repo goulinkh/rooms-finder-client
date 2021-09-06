@@ -1,0 +1,211 @@
+{
+  "openapi": "3.0.1",
+  "info": {
+    "title": "Free Room Finder",
+    "description": "Une API Rest qui a pour but d'aider les étudiants de l'Université Paul Sabatier à trouver des salles vides.",
+    "contact": {
+      "email": "contact@goulin.fr"
+    },
+    "license": {
+      "name": "Apache 2.0",
+      "url": "http://www.apache.org/licenses/LICENSE-2.0.html"
+    },
+    "version": "1.0.0"
+  },
+  "externalDocs": {
+    "description": "À propos du dev",
+    "url": "https://www.goulin.fr"
+  },
+  "servers": [
+    {
+      "url": "https://rooms-finder.api.goulin.fr/"
+    }
+  ],
+  "paths": {
+    "/": {
+      "get": {
+        "description": "Les salle vides",
+        "parameters": [
+          {
+            "name": "place",
+            "in": "query",
+            "description": "le nom de la salle ou bâtiment, (ex: u3-01 donne les resultats pour U3-01 et U3-01bis).",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "date",
+            "in": "query",
+            "description": "La date des résultats, si vide: les résultat pour le jour courant.",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "type": "array",
+                  "example": [
+                    {
+                      "name": "FSI / 2A-C01",
+                      "building": "2A"
+                    },
+                    {
+                      "name": "FSI / Amphi GRIGNARD (bat 2A)",
+                      "building": "2A"
+                    },
+                    {
+                      "name": "FSI / Amphi LE CHATELIER (bât 2A)",
+                      "building": "2A"
+                    }
+                  ],
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "name": {
+                        "type": "string"
+                      },
+                      "building": {
+                        "type": "string"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Paramètres manquantes",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "type": "object",
+                  "example": {
+                    "items": [
+                      {
+                        "message1": "Il faut donner une salle ou un bâtiment"
+                      },
+                      {
+                        "message2": "Salle non trouvé"
+                      }
+                    ]
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/rooms": {
+      "get": {
+        "description": "La liste des salles dans un bâtiment",
+        "parameters": [
+          {
+            "name": "building",
+            "in": "query",
+            "description": "le nom du bâtiment, si vide: toute les salles disponible.",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "type": "array",
+                  "example": [
+                    {
+                      "name": "FSI / 2A-C01",
+                      "building": "2A"
+                    },
+                    {
+                      "name": "FSI / Amphi GRIGNARD (bat 2A)",
+                      "building": "2A"
+                    },
+                    {
+                      "name": "FSI / Amphi LE CHATELIER (bât 2A)",
+                      "building": "2A"
+                    }
+                  ],
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "name": {
+                        "type": "string"
+                      },
+                      "building": {
+                        "type": "string"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/buildings": {
+      "get": {
+        "description": "La liste de toutes les bâtiments disponible sur l'edt CELCAT2",
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "type": "array",
+                  "example": [
+                    {
+                      "name": "1R3"
+                    },
+                    {
+                      "name": "3TP2"
+                    },
+                    {
+                      "name": "U1"
+                    },
+                    {
+                      "name": "U2"
+                    },
+                    {
+                      "name": "U3"
+                    },
+                    {
+                      "name": "U4"
+                    },
+                    {
+                      "name": "1A"
+                    },
+                    {
+                      "name": "3A"
+                    }
+                  ],
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "name": {
+                        "type": "string"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "components": {}
+}

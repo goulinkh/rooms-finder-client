@@ -1,0 +1,24 @@
+.header {
+  padding: 20px 0px;
+  display: flex;
+  align-items: center;
+}
+.link {
+  padding: 10px;
+}
+.activeLink {
+  font-weight: bold;
+  color: var(--accent);
+}
+.activeLink:hover {
+  color: var(--accent);
+}
+.logo {
+  font-family: "Times New Roman", Times, serif;
+  font-size: 1.3rem;
+  font-weight: bold;
+  font-style: italic;
+}
+.logo * {
+  font-family: "Times New Roman", Times, serif;
+}
