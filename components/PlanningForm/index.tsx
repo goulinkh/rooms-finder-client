@@ -46,6 +46,7 @@ export const PlanningForm: FC<Props> = ({ onSubmit }) => {
   const onBuildingChange = (e: { value?: any }) => {
     if (e && e.value) {
       setBuilding(e.value);
+      setRoom("")
       updateRooms(setRooms, e.value);
     }
   };
