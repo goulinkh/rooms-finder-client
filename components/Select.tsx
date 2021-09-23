@@ -35,7 +35,7 @@ export const Select: FC<Props> = ({
   const height = 29;
   const theme: ThemeConfig = (theme) => ({
     ...theme,
-    borderRadius: 0,
+    borderRadius: 10,
     colors: {
       ...theme.colors,
       primary: "var(--accent)",
@@ -50,7 +50,7 @@ export const Select: FC<Props> = ({
       color: state.isFocused || state.isSelected ? "white" : "black",
       backgroundColor:
         state.isFocused || state.isSelected || state.isRtl
-          ? "var(--accent-light)"
+          ? "var(--accent)"
           : "white",
       padding: 5,
       paddingBottom: 10,
@@ -62,9 +62,10 @@ export const Select: FC<Props> = ({
     control: (provided, state) => ({
       width,
       height,
-      borderRadius: "0px !important",
+      borderRadius: "0.4rem !important",
+      padding: ".2rem .4rem",
       transition: "all 0.4s ease-out",
-      border: "none !important",
+      border: "1px solid rgba(0,0,0,0.2)",
       borderBottom: state.isFocused
         ? "1px var(--accent) solid !important"
         : "1px rgba(0,0,0,0.25) solid !important",

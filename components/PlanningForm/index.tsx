@@ -71,6 +71,8 @@ export const PlanningForm: FC<Props> = ({ onSubmit }) => {
         yearPlaceholder="année"
         monthPlaceholder="mois"
         dayPlaceholder="Jour"
+        format="dd/MM/yyyy"
+        locale="fr-FR"
         onChange={(d: Date) => setDate(d)}
         value={date}
       />
