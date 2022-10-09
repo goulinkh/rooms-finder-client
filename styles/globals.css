@@ -20,10 +20,21 @@ body {
   --accent: #007a66;
   --accent-light: rgba(0, 122, 102, 0.4);
 }
+.root {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
 .container {
   width: 100%;
   max-width: 800px;
   margin: 0 auto;
+}
+main {
+  flex: 1 0 auto;
+}
+footer {
+  flex-shrink: 0;
 }
 a {
   text-decoration: none;
