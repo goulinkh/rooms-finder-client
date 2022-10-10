@@ -14,6 +14,8 @@ function MyApp({ Component, pageProps }: AppProps) {
           content="Trouver des salles vides pour les étudiants de l'Université Paul Sabatier"
         />
         <title>Salles vides</title>
+        <script defer data-domain="rooms-finder.goulin.fr" src="https://insights.api.goulin.fr/js/insights.js"></script>
+
       </Head>
       <Component {...pageProps} />
     </>
