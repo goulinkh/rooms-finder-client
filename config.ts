@@ -1,4 +1,4 @@
-const api = "https://rooms-finder.api.goulin.fr/";
+const api = "https://rooms-finder-api.goulin.fr/";
 export const config = {
   buildings: `${api}buildings`,
   rooms: `${api}rooms`,
